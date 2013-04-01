@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+<!--
+Принцип этой "системы", грубо говоря, следующий: script.js берет значение из атрибута data-action ссылки
+и вызывает одноименный метод из файла /class/stepWise.class.php, через прокладку /ajax/ajax.php
+-->
+
+<!-- Работа с базой данных -->
+<ul class="dbActions">
+    <li><a class="db" data-action="DbRecreateWithQueue" href="#">Пересоздать базу c очередью задач</a></li>
+    <li><a class="db" data-action="DbShowData" href="#">Посмотреть какие данные лежат в БД</a></li>
+</ul>
+
+<!-- Работа c экраном вывода -->
+<ul class="screenActions">
+    <li><a class="screen" data-action="ScreenClear" href="#">Очистить экран</a></li>
+</ul>
+
+<!-- Работа с очередью задач -->
+<ul class="processActions">
+    <li><a class="process" data-action="ProcessQueue" href="#">Запустить исполнение очереди задач</a></li>
+</ul>
+
+<!-- Область для вывода информации -->
+<div id="console"></div>
+
+<!-- Чтобы ошибки были "красными", а сообщения - "зелеными" -->
+<style type="text/css">
+    .error{color: #730000;}
+    .success{color: #007300;}
+</style>
+
+</body>
+</html>
